@@ -7,9 +7,9 @@ function run_system_profiler()
 	local _user="$(echo $1 | cut -d@ -f1 | cut -d: -f1)"
 	local _pass="$(echo $1 | cut -d: -f2 | cut -d@ -f1)"
 	local _host="$(echo $1 | cut -d@ -f2)"
-	local _outf="$_host.profile"
+	local _outf="$_host.spx"
 	
-	echo ssh -q "$_user@$_host" -t system_profiler \> $_outf
+	echo ssh -q "$_user@$_host" -t system_profiler -xml \> $_outf
 }
 
 case $1 in
