@@ -9,7 +9,7 @@ function run_system_profiler()
 	local _host="$(echo $1 | cut -d@ -f2)"
 	local _outf="$_host.spx"
 	
-	echo ssh -q "$_user@$_host" -t system_profiler -xml \> $_outf
+	ssh -q "$_user@$_host" -t system_profiler -xml > $_outf
 }
 
 case $1 in
@@ -28,7 +28,7 @@ case $1 in
 				*)
 					if test -f $i
 					then
-						cat $i | while read line
+						for line in $(cat $i)
 						do
 							echo $line
 							run_system_profiler $line
