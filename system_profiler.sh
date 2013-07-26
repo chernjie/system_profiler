@@ -11,7 +11,7 @@ function run_system_profiler()
 	
 	ssh -q "$_user@$_host" -t system_profiler -xml > $_outf
 	_error=$?
-	[ $_error -ne 0 ] && Error $_error 
+	[ $_error -ne 0 ] && echo Error $_error 
 }
 
 case $1 in
