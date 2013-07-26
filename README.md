@@ -11,3 +11,11 @@ Usage
 ./system_profiler.sh [file...]
 ./system_profiler.sh [user:pass@host...]
 ```
+
+Example
+-------
+
+```
+username:password@127.0.0.1
+username:password@example.local
+```
