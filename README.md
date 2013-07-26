@@ -8,14 +8,21 @@ Usage
 -----
 
 ```
-./system_profiler.sh [file...]
-./system_profiler.sh [user:pass@host...]
+$ ./system_profiler.sh [file...]
+$ ./system_profiler.sh [user:pass@host...]
 ```
 
-Example
--------
+Example of file
+---------------
 
 ```
 username:password@127.0.0.1
 username:password@example.local
+```
+
+Setup
+-----
+
+```
+$ systemsetup -setremotelogin on
 ```
